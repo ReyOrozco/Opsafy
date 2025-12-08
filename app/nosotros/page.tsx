@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "link"
+import Link from "next/link"
 import { Heart, Zap, Target, Users } from "lucide-react"
 
 export default function Nosotros() {
