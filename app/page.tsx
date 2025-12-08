@@ -3,6 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronRight, ArrowRight } from "lucide-react"
+import WhatsAppButton from "@/components/whatsapp-button"
+import NotificationForm from "@/components/notification-form"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -214,6 +216,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={`/servicios/${service.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="inline-block mt-4 text-cyan-400 hover:text-cyan-300 text-sm font-semibold flex items-center gap-1"
+                >
+                  Ver más <ArrowRight size={14} />
+                </Link>
               </div>
             ))}
           </div>
@@ -296,8 +304,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="notificaciones" className="py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Mantente Informado</h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Suscríbete para recibir actualizaciones sobre nuestros servicios y soluciones
+            </p>
+          </div>
+          <NotificationForm />
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-slate-800/50 border-t border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Listo para transformar tu negocio</h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
@@ -385,7 +405,7 @@ export default function Home() {
                 <strong>Email:</strong> info@opsafy.com
               </p>
               <p className="text-slate-400 text-sm">
-                <strong>WhatsApp:</strong> +1 (123) 456-7890
+                <strong>WhatsApp:</strong> +52 81 1985 9387
               </p>
             </div>
           </div>
@@ -405,6 +425,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <WhatsAppButton />
     </div>
   )
 }
