@@ -99,6 +99,37 @@ export default function DesarrolloDigital() {
             </div>
 
             <div>
+              <h2 className="text-3xl font-bold mb-12 text-center">Ejemplos de Nuestros Sistemas</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  { title: "Sistema de Gestión Web", desc: "Panel administrativo para control total de operaciones" },
+                  { title: "Aplicación Móvil", desc: "App para iOS y Android con sincronización en tiempo real" },
+                  { title: "Plataforma E-commerce", desc: "Tienda digital con catálogo y sistema de pagos" },
+                  { title: "Dashboard Analítico", desc: "Reportes e insights con visualización de datos" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative group rounded-xl overflow-hidden border border-slate-700 bg-slate-900/50 hover:border-cyan-500/50 transition-all"
+                  >
+                    <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
+                      <img
+                        src={`/.jpg?key=555de&height=300&width=600&query=${item.title}`}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold mb-2 group-hover:text-cyan-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-slate-400">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
               <h2 className="text-3xl font-bold mb-6">Nuestro Proceso</h2>
               <div className="space-y-4">
                 {[
